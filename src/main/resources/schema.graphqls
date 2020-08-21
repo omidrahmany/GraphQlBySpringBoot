@@ -1,0 +1,26 @@
+schema {
+ query: RootQuery
+}
+
+
+type RootQuery {
+ bookById(id:ID!): Book
+ books(limit: Int): [Book]
+ users: [User]
+ userById(id: ID!): User
+}
+
+
+type Book {
+ bookId: ID
+ creator: User
+ createdAt: String
+ title: String
+ isbn: String
+}
+
+type User {
+ userId: ID
+ fullName: String
+ email: String
+}
